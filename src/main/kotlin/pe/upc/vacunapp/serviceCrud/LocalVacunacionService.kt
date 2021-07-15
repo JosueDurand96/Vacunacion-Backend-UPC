@@ -1,8 +1,7 @@
-package pe.upc.vacunapp.service
+package pe.upc.vacunapp.serviceCrud
 
 import pe.upc.vacunapp.dao.LocalVacunacionDAO
 import pe.upc.vacunapp.domain.LocalVacunacion
-import pe.upc.vacunapp.domain.Vacuna
 import pe.upc.vacunapp.utils.getCurrentDateTime
 import org.springframework.dao.DuplicateKeyException
 import org.springframework.data.repository.findByIdOrNull
@@ -10,7 +9,7 @@ import org.springframework.stereotype.Service
 import javax.persistence.EntityNotFoundException
 
 @Service
-class LocalVacunacionService(private val localVacunacionDAO: LocalVacunacionDAO): BasicCrud<LocalVacunacion, Int> {
+class LocalVacunacionService(private val localVacunacionDAO: LocalVacunacionDAO): BasicServiceCrud<LocalVacunacion, Int> {
     override fun findAll(): List<LocalVacunacion> {
         return this.localVacunacionDAO.findAll()
     }

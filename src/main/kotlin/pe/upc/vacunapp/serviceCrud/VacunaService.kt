@@ -1,4 +1,4 @@
-package pe.upc.vacunapp.service
+package pe.upc.vacunapp.serviceCrud
 
 import pe.upc.vacunapp.dao.VacunaDAO
 import pe.upc.vacunapp.domain.Vacuna
@@ -9,7 +9,7 @@ import javax.persistence.EntityNotFoundException
 import pe.upc.vacunapp.utils.*
 
 @Service
-class VacunaService(private val vacunaDAO: VacunaDAO): BasicCrud<Vacuna, Int> {
+class VacunaService(private val vacunaDAO: VacunaDAO): BasicServiceCrud<Vacuna, Int> {
     override fun findAll(): List<Vacuna> {
         return this.vacunaDAO.findAll()
     }

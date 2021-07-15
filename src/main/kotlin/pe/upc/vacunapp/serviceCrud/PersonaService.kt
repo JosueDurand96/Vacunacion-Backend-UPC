@@ -1,4 +1,4 @@
-package pe.upc.vacunapp.service
+package pe.upc.vacunapp.serviceCrud
 
 import pe.upc.vacunapp.dao.PersonaDAO
 import pe.upc.vacunapp.domain.Persona
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service
 import javax.persistence.EntityNotFoundException
 
 @Service
-class PersonaService(private val personaDAO: PersonaDAO): BasicCrud<Persona,String> {
+class PersonaService(private val personaDAO: PersonaDAO): BasicServiceCrud<Persona,String> {
     override fun findAll(): List<Persona> {
         return this.personaDAO.findAll()
     }

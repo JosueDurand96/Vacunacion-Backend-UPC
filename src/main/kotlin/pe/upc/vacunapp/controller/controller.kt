@@ -3,7 +3,7 @@ package pe.upc.vacunapp.controller
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 import pe.upc.vacunapp.domain.*
-import pe.upc.vacunapp.service.*
+import pe.upc.vacunapp.serviceCrud.*
 
 @RestController
 @RequestMapping("/api/persona")
@@ -19,7 +19,7 @@ class LocalVacunacionController(localVacunacionService: LocalVacunacionService):
 
 @RestController
 @RequestMapping("/api/campana")
-class CampanaController(campanaService: CampanaService):BasicController<Campana,Int>(campanaService)
+class CampanaController(campanaService: CampaignService):BasicController<Campana,Int>(campanaService)
 
 @RestController
 @RequestMapping("/api/campana_notificacion")

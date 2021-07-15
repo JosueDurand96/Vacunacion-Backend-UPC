@@ -1,6 +1,6 @@
-package pe.upc.vacunapp.service
+package pe.upc.vacunapp.serviceCrud
 
-interface BasicCrud<T,ID>{
+interface BasicServiceCrud<T,ID>{
     fun findAll():List<T>
     fun findById(id: ID):T?
     fun save(t:T): T

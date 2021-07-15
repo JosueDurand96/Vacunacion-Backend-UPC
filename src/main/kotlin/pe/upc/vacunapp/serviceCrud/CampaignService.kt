@@ -1,4 +1,4 @@
-package pe.upc.vacunapp.service
+package pe.upc.vacunapp.serviceCrud
 
 import pe.upc.vacunapp.dao.CampanaDAO
 import pe.upc.vacunapp.dao.LocalVacunacionDAO
@@ -12,7 +12,7 @@ import javax.persistence.EntityNotFoundException
 
 
 @Service
-class CampanaService(private val campanaDAO: CampanaDAO,private val localVacunacionDAO: LocalVacunacionDAO,private val vacunaDao: VacunaDAO): BasicCrud<Campana,Int> {
+class CampaignService(private val campanaDAO: CampanaDAO, private val localVacunacionDAO: LocalVacunacionDAO, private val vacunaDao: VacunaDAO): BasicServiceCrud<Campana,Int> {
 
     override fun findAll(): List<Campana> {
         return this.campanaDAO.findAll()
@@ -61,7 +61,7 @@ class CampanaService(private val campanaDAO: CampanaDAO,private val localVacunac
 
     override fun deleteById(id: Int): Campana {
         return this.findById(id)?.apply {
-            this@CampanaService.campanaDAO.deleteById(this.id_campana)
+            this@CampaignService.campanaDAO.deleteById(this.id_campana)
         } ?: throw EntityNotFoundException("$id does not exists")
     }
 }

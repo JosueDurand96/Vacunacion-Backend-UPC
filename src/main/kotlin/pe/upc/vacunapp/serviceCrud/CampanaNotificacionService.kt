@@ -1,4 +1,4 @@
-package pe.upc.vacunapp.service
+package pe.upc.vacunapp.serviceCrud
 
 import org.springframework.dao.DuplicateKeyException
 import org.springframework.data.repository.findByIdOrNull
@@ -10,7 +10,7 @@ import pe.upc.vacunapp.utils.getCurrentDateTime
 import javax.persistence.EntityNotFoundException
 
 @Service
-class CampanaNotificacionService(private val campanaNotificacionDAO: CampanaNotificacionDAO, private val campanaDAO: CampanaDAO): BasicCrud<CampanaNotificacion,Int>  {
+class CampanaNotificacionService(private val campanaNotificacionDAO: CampanaNotificacionDAO, private val campanaDAO: CampanaDAO): BasicServiceCrud<CampanaNotificacion,Int>  {
 
     override fun findAll(): List<CampanaNotificacion> {
         return this.campanaNotificacionDAO.findAll()

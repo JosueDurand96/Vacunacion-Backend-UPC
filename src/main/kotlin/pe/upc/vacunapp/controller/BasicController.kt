@@ -1,13 +1,13 @@
 package pe.upc.vacunapp.controller
 
-import pe.upc.vacunapp.service.BasicCrud
+import pe.upc.vacunapp.serviceCrud.BasicServiceCrud
 import io.swagger.annotations.ApiOperation
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
-abstract class BasicController<T,ID>(private val basicCrud: BasicCrud<T, ID>) {
+abstract class BasicController<T,ID>(private val basicCrud: BasicServiceCrud<T, ID>) {
 
     //cada que el controlador reciba una petición http de tipo get va a invocar esta funcion
     @ApiOperation("Get all entities")
